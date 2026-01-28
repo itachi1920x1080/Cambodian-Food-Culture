@@ -57,6 +57,7 @@
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transition: 0.3s;
+            cursor: pointer; /* Shows user they can click */
         }
 
         .card:hover {
@@ -79,6 +80,37 @@
             color: var(--dark);
             border-left: 5px solid var(--secondary);
             padding-left: 10px;
+        }
+
+        /* --- LIGHTBOX (POP-UP) STYLING --- */
+        #imageOverlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        #imageOverlay img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 10px;
+            border: 4px solid white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .close-hint {
+            position: absolute;
+            bottom: 20px;
+            color: white;
+            font-size: 0.9em;
+            background: rgba(0,0,0,0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
         }
 
         /* Tradition Section */
@@ -113,14 +145,13 @@
 
     <header>
         <h1>Cambodian Food Culture</h1>
-        <!-- <p>A Presentation by Ah </p> -->
     </header>
 
     <div class="container">
         <h2>Our Daily Meals</h2>
         
         <div class="grid">
-            <div class="card">
+            <div class="card" onclick="openFullImage('/image/photo_1_2026-01-28_13-39-39.jpg')">
                 <img src="/image/photo_1_2026-01-28_13-39-39.jpg" alt="Steamed Rice">
                 <div class="card-content">
                     <h3>🍚 Rice is Life</h3>
@@ -128,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="openFullImage('/image/photo_2_2026-01-28_13-39-39.jpg')">
                 <img src="/image/photo_2_2026-01-28_13-39-39.jpg" alt="Healthy Soup">
                 <div class="card-content">
                     <h3>🥣 Popular Soups</h3>
@@ -136,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="openFullImage('/image/photo_2_2026-01-28_13-53-22.jpg')">
                 <img src="/image/photo_2_2026-01-28_13-53-22.jpg" alt="Stir-fried Morning Glory">
                 <div class="card-content">
                     <h3>🥬 Healthy Vegetables</h3>
@@ -155,6 +186,25 @@
             <p>Thank you for listening!</p>
         </footer>
     </div>
+
+    <div id="imageOverlay" onclick="closeFullImage()">
+        <img id="fullSizeImage" src="" alt="Full View">
+        <div class="close-hint">Click anywhere to close</div>
+    </div>
+
+    <script>
+        function openFullImage(src) {
+            const overlay = document.getElementById('imageOverlay');
+            const fullImg = document.getElementById('fullSizeImage');
+            
+            fullImg.src = src;
+            overlay.style.display = 'flex';
+        }
+
+        function closeFullImage() {
+            document.getElementById('imageOverlay').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
