@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambodian Food Culture Presentation</title>
+    <style>
+        :root {
+            --primary: #8e44ad;
+            --secondary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #f4f7f6;
+            --accent: #e74c3c;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        /* Image Gallery Styling */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--dark);
+            border-left: 5px solid var(--secondary);
+            padding-left: 10px;
+        }
+
+        /* Tradition Section */
+        .tradition-banner {
+            background: var(--dark);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .tradition-banner h2 { color: var(--secondary); }
+
+        footer {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            background: #fff;
+            margin-top: 50px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cambodian Food Culture</h1>
+        <!-- <p>A Presentation by Ah </p> -->
+    </header>
+
+    <div class="container">
+        <h2>Our Daily Meals</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <img src="/image/photo_1_2026-01-28_13-39-39.jpg" alt="Steamed Rice">
+                <div class="card-content">
+                    <h3>🍚 Rice is Life</h3>
+                    <p>Rice is our most important food. We eat it every day for breakfast, lunch, and dinner. It is the heart of our kitchen.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="/image/photo_2_2026-01-28_13-39-39.jpg" alt="Healthy Soup">
+                <div class="card-content">
+                    <h3>🥣 Popular Soups</h3>
+                    <p>Often made with fish, meat, or vegetables. Soup is healthy, easy to eat, and stays popular in every family.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="/image/photo_2_2026-01-28_13-53-22.jpg" alt="Stir-fried Morning Glory">
+                <div class="card-content">
+                    <h3>🥬 Healthy Vegetables</h3>
+                    <p>We use fresh morning glory, cabbage, and cucumbers. We believe fresh greens are the key to good health.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="tradition-banner">
+            <h2>Special Traditions</h2>
+            <p>During festivals, we cook special foods and eat together. Eating together is our way of showing <strong>love and respect</strong> to our family and elders.</p>
+        </section>
+
+        <footer>
+            <p class="quote">"Our food is simple, healthy, and delicious. It shows our lifestyle and our traditions."</p>
+            <p>Thank you for listening!</p>
+        </footer>
+    </div>
+
+</body>
+</html>
