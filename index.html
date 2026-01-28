@@ -57,7 +57,7 @@
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             transition: 0.3s;
-            cursor: pointer; /* Shows user they can click */
+            cursor: pointer;
         }
 
         .card:hover {
@@ -82,7 +82,7 @@
             padding-left: 10px;
         }
 
-        /* --- LIGHTBOX (POP-UP) STYLING --- */
+        /* Lightbox Pop-up */
         #imageOverlay {
             display: none;
             position: fixed;
@@ -100,20 +100,18 @@
             max-height: 85%;
             border-radius: 10px;
             border: 4px solid white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
         .close-hint {
             position: absolute;
             bottom: 20px;
             color: white;
-            font-size: 0.9em;
             background: rgba(0,0,0,0.5);
             padding: 5px 15px;
             border-radius: 20px;
         }
 
-        /* Tradition Section */
+        /* Special Traditions Section */
         .tradition-banner {
             background: var(--dark);
             color: white;
@@ -123,21 +121,32 @@
             text-align: center;
         }
 
+        .tradition-banner img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tradition-banner img:hover { opacity: 0.8; }
         .tradition-banner h2 { color: var(--secondary); }
 
         footer {
             text-align: center;
             padding: 50px;
-            font-size: 1.2em;
-            color: #7f8c8d;
             background: #fff;
             margin-top: 50px;
+            border-radius: 20px 20px 0 0;
         }
 
-        .quote {
-            font-style: italic;
-            font-weight: bold;
-            color: var(--primary);
+        footer img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -152,36 +161,38 @@
         
         <div class="grid">
             <div class="card" onclick="openFullImage('/image/photo_1_2026-01-28_13-39-39.jpg')">
-                <img src="/image/photo_1_2026-01-28_13-39-39.jpg" alt="Steamed Rice">
+                <img src="/image/photo_1_2026-01-28_13-39-39.jpg" alt="Rice">
                 <div class="card-content">
                     <h3>🍚 Rice is Life</h3>
-                    <p>Rice is our most important food. We eat it every day for breakfast, lunch, and dinner. It is the heart of our kitchen.</p>
+                    <p>Rice is our most important food. We eat it every day for breakfast, lunch, and dinner.</p>
                 </div>
             </div>
 
             <div class="card" onclick="openFullImage('/image/photo_2_2026-01-28_13-39-39.jpg')">
-                <img src="/image/photo_2_2026-01-28_13-39-39.jpg" alt="Healthy Soup">
+                <img src="/image/photo_2_2026-01-28_13-39-39.jpg" alt="Soup">
                 <div class="card-content">
-                    <h3>🥣 Popular Soups</h3>
-                    <p>Often made with fish, meat, or vegetables. Soup is healthy, easy to eat, and stays popular in every family.</p>
+                    <h3>🥣 Healthy Soups</h3>
+                    <p>Often made with fish, meat, or vegetables. Soup is healthy and stays popular in every family.</p>
                 </div>
             </div>
 
             <div class="card" onclick="openFullImage('/image/photo_2_2026-01-28_13-53-22.jpg')">
-                <img src="/image/photo_2_2026-01-28_13-53-22.jpg" alt="Stir-fried Morning Glory">
+                <img src="/image/photo_2_2026-01-28_13-53-22.jpg" alt="Morning Glory">
                 <div class="card-content">
-                    <h3>🥬 Healthy Vegetables</h3>
-                    <p>We use fresh morning glory, cabbage, and cucumbers. We believe fresh greens are the key to good health.</p>
+                    <h3>🥬 Fresh Greens</h3>
+                    <p>Stir-fried morning glory is a favorite. We believe fresh greens are key to good health.</p>
                 </div>
             </div>
         </div>
 
         <section class="tradition-banner">
+            <img src="/image/image.png" alt="Family Feast" onclick="openFullImage(this.src)">
             <h2>Special Traditions</h2>
-            <p>During festivals, we cook special foods and eat together. Eating together is our way of showing <strong>love and respect</strong> to our family and elders.</p>
+            <p>During festivals, we cook special foods and eat together. Eating together shows <strong>love and respect</strong> to each other.</p>
         </section>
 
         <footer>
+            <img src="/image/image copy.png" alt="Fresh Ingredients" onclick="openFullImage(this.src)">
             <p class="quote">"Our food is simple, healthy, and delicious. It shows our lifestyle and our traditions."</p>
             <p>Thank you for listening!</p>
         </footer>
@@ -196,7 +207,6 @@
         function openFullImage(src) {
             const overlay = document.getElementById('imageOverlay');
             const fullImg = document.getElementById('fullSizeImage');
-            
             fullImg.src = src;
             overlay.style.display = 'flex';
         }
